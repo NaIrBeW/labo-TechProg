@@ -1,8 +1,9 @@
 #include <stdio.h>
 
+//O(1) l’accès à des éléments dans des structures de donnée
 void sort(int* arr,int length){
-    int y = 0;
-    for(int i = length; i >= 0;){
+    int y = 0; // O(1)
+    for(int i = length; i >= 0;){ //O(n)
         arr[y] = arr[--i];
         if(i < 0){
             printf(stderr,"Something went wrong...");

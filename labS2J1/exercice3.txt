@@ -1,0 +1,3 @@
+Réponse :
+
+La notation grand O de cet algorithme est O(2^n). La fonction subSearch est une fonction récursive qui effectue deux appels récursifs à chaque étape, chaque appel crée deux appels récursifs , le nombre total d'appels récursifs dans le pire des cas est une croissance exponentielle, ce pourquoi grand O 2 exposant n. 
