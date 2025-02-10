@@ -50,4 +50,5 @@ void quickSort(int* elements, int left, int right)
 	//Recursive calls(rappel la meme fonction)
 	quickSort(elements, left, c - 1);
 	quickSort(elements, c + 1, right);
+	// O(n log n) pour la fonction quicksort 
 }

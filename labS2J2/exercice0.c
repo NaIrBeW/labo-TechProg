@@ -18,7 +18,7 @@ void combine(int arr[], int left, int m, int right)
 	i = 0;
 	j = 0; 
 	k = left; 
-	while (i < n1 && j < n2) {
+	while (i < n1 && j < n2) { 
 		if (Left[i] <= Right[j]) {
 			arr[k] = Left[i];
 			i++;
@@ -30,13 +30,13 @@ void combine(int arr[], int left, int m, int right)
 		k++;
 	}
 
-	while (i < n1) {
+	while (i < n1) { 
 		arr[k] = Left[i];
 		i++;
 		k++;
 	}
 
-	while (j < n2) {
+	while (j < n2) { 
 		arr[k] = Right[j];
 		j++;
 		k++;

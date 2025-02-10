@@ -18,7 +18,7 @@ void sort (int a[], int n){
       NUM_DIGIT++;
       msd /= 10;
    }
-   for (int d_count = 0; d_count < NUM_DIGIT; d_count++){
+   for (int d_count = 0; d_count < NUM_DIGIT; d_count++){ 
       for (i = 0; i < RANGE; i++){
          bucket_count[i] = 0;
       }
@@ -28,7 +28,7 @@ void sort (int a[], int n){
          bucket_count[r] += 1;
       }
       i = 0;
-      for (k = 0; k < RANGE; k++){
+      for (k = 0; k < RANGE; k++){ /
          for (j = 0; j < bucket_count[k]; j++){
             a[i] = bucket[k][j];
             i++;
