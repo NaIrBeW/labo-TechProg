@@ -1,3 +1,3 @@
 Réponse :
 
-L'algorithme représenté est une complexité O(n), une complexité linéaire. La boucle for analyse chaque éléments du tableau arr jusqu'à ce que i soit égal a 0. La fonction sert a analyser en quelque sorte le sizeof du tableau. Donc, puisque la liste ne semble pas être énorme, une complexité de ce genre semble amplement suffisante. 
+L'algorithme représenté est une complexité O(n), une complexité linéaire.
