@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "labo.h"
 
 /* This code is public domain -- Will Hartung 4/9/09 */
@@ -92,12 +91,12 @@ int test_code(FILE* f) {
 				memset(text, 0, strlen(text));
 			}
 			else if (isSearched && p.name[0] == '\0') {
-				strcpy(p.name,text);
+				strcpy(p.name, text);
 				memset(text, 0, strlen(text));
 				isSearched = 0;
 			}
 			else if (isSearched && p.name[0] != '\0') {
-				p.age =  atoi(text);
+				p.age = atoi(text);
 				memset(text, 0, strlen(text));
 				isSearched = 0;
 			}
@@ -107,7 +106,7 @@ int test_code(FILE* f) {
 		if (num_persons <= 1) {
 			insertHead(&head, &persons[num_persons]); hline = __LINE__;
 			n = head.next;
-			if(num_persons == 1)
+			if (num_persons == 1)
 				assert(n != NULL);
 		}
 		else {
@@ -127,7 +126,7 @@ int test_code(FILE* f) {
 	while (node != NULL) {
 		Person* p = (Person*)node->data;
 		if (p != NULL && (strcmp(p->name, persons[i].name) != 0 || p->age != persons[i].age)) {
-			fprintf(stderr, "Insertion failed on person %s with age %i, at line %i\n", persons[i].name, (int)persons[i].age,line);
+			fprintf(stderr, "Insertion failed on person %s with age %i, at line %i\n", persons[i].name, (int)persons[i].age, line);
 			out = -1;
 		}
 		node = node->next;
@@ -135,13 +134,13 @@ int test_code(FILE* f) {
 	}
 	Node* l = removeByData(&head, &persons[4]); line = __LINE__;
 	Person* p = NULL;
-	if(l != NULL)
+	if (l != NULL)
 		p = l->data;
 	if (p == NULL || (strcmp(p->name, persons[3].name) != 0 && p->age != persons[3].age)) {
 		fprintf(stderr, "Deletion by data failed on person %s with age %i, at line %i\n", persons[4].name, (int)persons[4].age, line);
-		out =  -1;
+		out = -1;
 	}
-	if(l != NULL)
+	if (l != NULL)
 		insert(l, &persons[4]);
 	l = removeByName(&head, persons[4].name); line = __LINE__;
 	if (l != NULL)
@@ -160,7 +159,7 @@ void verify_sort(FILE* f) {
 	char* ligne = NULL;
 	size_t len = 0;
 	size_t read;
-	int ligneCount = 0; 
+	int ligneCount = 0;
 
 	size_t num_persons = 0;
 	Node* n = NULL;
@@ -242,7 +241,7 @@ void* allocate(size_t size) {
 int main(int argc, char** argv) {
 	heap = (uint8_t*)malloc(HEAP_SIZE);
 	assert(heap != NULL);
-	FILE* input = fopen("test_input.txt","r");
+	FILE* input = fopen("test_input.txt", "r");
 	if (input != NULL) {
 		if (test_code(input) != -1) {
 			fclose(input);
@@ -250,10 +249,10 @@ int main(int argc, char** argv) {
 			verify_sort(input);
 		}
 	}
-	
 
-	if(input != NULL)
+
+	if (input != NULL)
 		fclose(input);
 
 	return 0;
-}
+} 
